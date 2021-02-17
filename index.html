@@ -5,8 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gamebase</title>
+    <link rel="stylesheet" href="gb.css">
 </head>
 <body>
-    Gaming Website
+    <div id="login-div" class="main-div">
+       <div class="inn">
+         <form autocomplete="on">
+           
+            <label for="email">Email</label>
+            <input type="email" id="email" autofocus placeholder="Enter your email address">
+            
+            <br>
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password">
+           
+            <br>
+            <button id="signup-btn">Sign Up</button>
+            <button id="login-btn">Login</button>
+           
+          </form>
+          </div>
+        </div>
+          <div id="user-div" class="loggedin-div">
+        <button id="logout-btn">Logout</button>
+        </div>
+       <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBZlEmShOSqOAhnN7-YzAuh3mtqkZu0PK4",
+    authDomain: "playonn-85988.firebaseapp.com",
+    projectId: "playonn-85988",
+    storageBucket: "playonn-85988.appspot.com",
+    messagingSenderId: "763963593792",
+    appId: "1:763963593792:web:ad70f912f5ed19ed1efba5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+</script>
+    <script src="auth.js"></script>
 </body>
 </html>
