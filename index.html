@@ -13,11 +13,11 @@
          <form autocomplete="on">
            
             <label for="email">Email</label>
-            <input type="email" id="email" autofocus placeholder="Enter your email address">
+            <input type="email" id="email" placeholder="Enter your email address" >
             
             <br>
             <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Enter password">
+            <input type="password" id="password" placeholder="Enter password" >
            
             <br>
             <button id="signup-btn">Sign Up</button>
@@ -31,25 +31,57 @@
           <div><button id="logout-btn">Logout</button></div>
          <div class="inn" id="addgame">
            <form id="addgame-form" autocomplete="off">
-           <label for="name">game name</label>
-             <input type="text" id="gamename" required>
+           <label for="name">Game Name</label>
+             <input type="text" id="gamename" placeholder="Enter game name" required>
            <br>
-           <label for="link">game link</label>
-           <input type="text" id="gamelink" required>
+           <label for="link">Game Link</label>
+           <input type="text" id="gamelink" placeholder="Enter game link" required>
+           <br>
+           <label for="image">Image Link</label>
+           <input type="text" id="imglink" placeholder="Enter image link " required>
          <br>
-         <label for="category">game category</label>
-         <input type="text" id="gamecategory" required>
-       
-       <button >add game</button>
+         <label for="category">Game Category</label>
+         <select id="gamecategory" name="gamesctg">
+          
+          <option value="match 3">match 3</option>
+          <option value="bubble shooter">bubble shooter</option>
+          <option value="puzzle">puzzle</option>
+          <option value="quiz">quiz</option>
+          <option value="cards">cards</option>
+          <option value="girls">girls</option>
+          <option value="jump & run">jump & run</option>
+          <option value="arcade">arcade</option>
+          <option value="racing">racing</option>
+          <option value="sport">sport</option>
+          
+        </select>
+        <br>
+       <button id="addgame-btn">Add Game</button>
      </form>
-   </div>
+  </div>
+
+
    <!-- Game LIST -->
-       <div class="container" style="margin-top: 40px;">
-         <ul style="border: none;" class="games">
+       <div class="loggedin-div" style="margin-top: 40px;">
+        <h4>DOUBLE CLICK THE CATEGORY BUTTONS TO VIEW GAMES.</h4>
+        <div id="myBtnContainer">
+          <button class="btn active" onclick="filterSelection('all')">all</button>
+          <button class="btn" onclick="filterSelection('match 3')"> match 3</button>
+          <button class="btn" onclick="filterSelection('bubble shooter')"> bubble shooter</button>
+          <button class="btn" onclick="filterSelection('puzzle')"> puzzle</button>
+          <button class="btn" onclick="filterSelection('cards')"> cards</button>
+          <button class="btn" onclick="filterSelection('girls')"> girls</button>
+          <button class="btn" onclick="filterSelection('jump & run')"> jump & run</button>
+          <button class="btn" onclick="filterSelection('arcade')"> arcade</button>
+          <button class="btn" onclick="filterSelection('racing')"> racing</button>
+          <button class="btn" onclick="filterSelection('sport')"> sport</button>
+          </div>
+          <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search for games.." title="Type in a game" autocomplete="off">
+        <div id="myUL" class="games">
            
-        </ul>
+        </div>
        </div>
- </div> 
+ 
 
        <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
@@ -73,7 +105,9 @@
   firebase.initializeApp(firebaseConfig);
   const auth = firebase.auth();
   const db = firebase.firestore();
-</script>
+
+  
+  </script>
     <script src="auth.js"></script>
     <script src="gb.js"></script>
 </body>

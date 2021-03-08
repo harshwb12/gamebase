@@ -24,12 +24,13 @@ createform.addEventListener('submit',(e)=>{
   db.collection('games').add({
     name:createform['gamename'].value,
     link:createform['gamelink'].value,
-    category:createform['gamecategory'].value
-
+    category:createform['gamecategory'].value,
+    image:createform['imglink'].value
   }).then(() =>{
 createform.reset();
   }).catch(err =>{
       console.log(err.message);
+      window.alert(err.message);
   })
 })
 //sign up
