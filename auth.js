@@ -20,7 +20,7 @@ auth.onAuthStateChanged(user =>
 const createform = document.querySelector('#addgame-form');
 createform.addEventListener('submit',(e)=>{
   e.preventDefault();
-
+  
   db.collection('games').add({
     name:createform['gamename'].value,
     link:createform['gamelink'].value,
@@ -29,9 +29,9 @@ createform.addEventListener('submit',(e)=>{
   }).then(() =>{
 createform.reset();
   }).catch(err =>{
-      console.log(err.message);
-      window.alert(err.message);
-  })
+    console.log(err.message);
+    window.alert(err.message);})
+
 })
 //sign up
 const signupBtn = document.querySelector('#signup-btn');
@@ -65,10 +65,18 @@ const loginBtn = document.querySelector('#login-btn');
      window.alert(error.message);
     })
 });
+const searchform = document.querySelector('#search');
 //logout
 const logoutBtn = document.querySelector('#logout-btn');
+
 logoutBtn.addEventListener('click', e => {
   e.preventDefault();
+  createform.reset();
+  searchform.reset();
+  
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  document.getElementById("al").className += " active";
   auth.signOut();
  
 })

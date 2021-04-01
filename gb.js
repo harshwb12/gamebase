@@ -5,9 +5,10 @@ const loggedin = document.querySelectorAll('.loggedin-div');
 const setupui = (user) =>{
     if(user) {
         //toggle ui elements
+        
         loggedin.forEach(item => item.style.display = 'block');
         loggedout.forEach(item => item.style.display = 'none');
-
+        filterSelection('all');
     } else{
         //toggle ui elements
         loggedin.forEach(item => item.style.display = 'none');
@@ -37,26 +38,10 @@ const setupgames = (data) =>{
     });
     gamelist.innerHTML = html;
 } else{
-    gamelist.innerHTML = '';
+  gamelist.innerHTML = '';
 }
 }
 
-function searchFunction() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName("div");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
 
 function filterSelection(c) {
   var x, i;
@@ -64,7 +49,7 @@ function filterSelection(c) {
   if (c == "all") c = "";
   for (i = 0; i < x.length; i++) {
     RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) {AddClass(x[i], "show");}
   }
 }
 
@@ -98,4 +83,43 @@ for (var i = 0; i < btns.length; i++) {
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
   });
+}
+function searchFunction() {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName("div");
+  for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+      } else {
+          li[i].style.display = "none";
+      }
+  }
+}
+//dropdown category
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function ctgFunction() {
+  document.getElementById("myBtnContainer").classList.toggle("shown");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('shown')) {
+        openDropdown.classList.remove('shown');
+      }
+    }
+  }
+}
+function addgameFunction() {
+  document.getElementById("addgame").classList.toggle("seen");
 }

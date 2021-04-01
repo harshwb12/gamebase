@@ -9,9 +9,13 @@
 </head>
 <body>
     <div id="login-div" class="main-div">
-       <div class="inn">
-         <form autocomplete="on">
-           
+      
+      <div class="bg-img">
+         
+        <form autocomplete="on" class="form-container">
+          <h2>Welcome to Gamebase Webite.</h2> 
+          <h3>Sign-up/Login to play games!!!</h3>
+          <hr>
             <label for="email">Email</label>
             <input type="email" id="email" placeholder="Enter your email address" >
             
@@ -24,11 +28,21 @@
             <button id="login-btn">Login</button>
            
           </form>
-          </div>
+        </div>
+          
         </div>
          
         <div id="user-div" class="loggedin-div">
-          <div><button id="logout-btn">Logout</button></div>
+         <div class="header">
+             <img src="logo.png" alt="gamebase logo" style="width:200px;height:100px;">
+             <div class="header-right">
+              <h>Online Gaming Website</h>
+              <button onclick="addgameFunction()" id="add-btn">ADD GAME(ONLY FOR ADMIN)</button>
+              <button id="logout-btn">LOGOUT</button>
+            </div>
+          </div>
+          
+          
          <div class="inn" id="addgame">
            <form id="addgame-form" autocomplete="off">
            <label for="name">Game Name</label>
@@ -59,25 +73,38 @@
        <button id="addgame-btn">Add Game</button>
      </form>
   </div>
+  
+  <div class="topnav">
+    <div class="dropdown">
+      <button onclick="ctgFunction()" class="dropbtn">Categories</button>
+   
+    <div id="myBtnContainer" class="dropdown-content">
+      <button id="al" class="btn active" onclick="filterSelection('all')">All Games</button>
+      <button class="btn" onclick="filterSelection('match 3')">Match 3</button>
+      <button class="btn" onclick="filterSelection('bubble shooter')">Bubble Shooter</button>
+      <button class="btn" onclick="filterSelection('puzzle')"> Puzzle </button>
+      <button class="btn" onclick="filterSelection('cards')"> Cards </button>
+      <button class="btn" onclick="filterSelection('girls')">Girls</button>
+      <button class="btn" onclick="filterSelection('jump & run')">Jump & Run</button>
+      <button class="btn" onclick="filterSelection('arcade')">Arcade</button>
+      <button class="btn" onclick="filterSelection('racing')">Racing</button>
+      <button class="btn" onclick="filterSelection('sport')">Sport</button>
+      </div>
+      </div>
+     <div class="search-container">
+      <form id="search">
+        <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search for games.." title="Type in a game" autocomplete="off">
+      </form>
+    </div>
+  </div>
 
 
    <!-- Game LIST -->
        <div class="loggedin-div" style="margin-top: 40px;">
-        <h4>DOUBLE CLICK THE CATEGORY BUTTONS TO VIEW GAMES.</h4>
-        <div id="myBtnContainer">
-          <button class="btn active" onclick="filterSelection('all')">all</button>
-          <button class="btn" onclick="filterSelection('match 3')"> match 3</button>
-          <button class="btn" onclick="filterSelection('bubble shooter')"> bubble shooter</button>
-          <button class="btn" onclick="filterSelection('puzzle')"> puzzle</button>
-          <button class="btn" onclick="filterSelection('cards')"> cards</button>
-          <button class="btn" onclick="filterSelection('girls')"> girls</button>
-          <button class="btn" onclick="filterSelection('jump & run')"> jump & run</button>
-          <button class="btn" onclick="filterSelection('arcade')"> arcade</button>
-          <button class="btn" onclick="filterSelection('racing')"> racing</button>
-          <button class="btn" onclick="filterSelection('sport')"> sport</button>
-          </div>
-          <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search for games.." title="Type in a game" autocomplete="off">
-        <div id="myUL" class="games">
+       
+        
+           
+          <div id="myUL" class="games">
            
         </div>
        </div>
