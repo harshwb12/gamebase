@@ -42,8 +42,9 @@ const setupgames = (data) =>{
 }
 }
 
+//category feature
+function filterSelection(c) {document.getElementById("gameheading").innerHTML = c;
 
-function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("filterDiv");
   if (c == "all") c = "";
@@ -84,6 +85,7 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
+//search feature
 function searchFunction() {
   var input, filter, ul, li, a, i, txtValue;
   input = document.getElementById("myInput");
@@ -100,9 +102,8 @@ function searchFunction() {
       }
   }
 }
-//dropdown category
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
+
+
 function ctgFunction() {
   document.getElementById("myBtnContainer").classList.toggle("shown");
 }
@@ -120,6 +121,7 @@ window.onclick = function(event) {
     }
   }
 }
+
 function addgameFunction() {
   document.getElementById("addgame").classList.toggle("seen");
 }
