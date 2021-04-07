@@ -121,7 +121,3 @@ window.onclick = function(event) {
     }
   }
 }
-
-function addgameFunction() {
-  document.getElementById("addgame").classList.toggle("seen");
-}

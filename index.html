@@ -37,42 +37,43 @@
              <img src="logo.png" alt="gamebase logo" style="width:200px;height:100px;">
              <div class="header-right">
               <h>Online Gaming Website</h>
-              <button onclick="addgameFunction()" id="add-btn">ADD GAME(ONLY FOR ADMIN)</button>
+             
+             
               <button id="logout-btn">LOGOUT</button>
             </div>
           </div>
-          
-          
-         <div class="inn" id="addgame">
-           <form id="addgame-form" autocomplete="off">
-           <label for="name">Game Name</label>
-             <input type="text" id="gamename" placeholder="Enter game name" required>
-           <br>
-           <label for="link">Game Link</label>
-           <input type="text" id="gamelink" placeholder="Enter game link" required>
-           <br>
-           <label for="image">Image Link(Copy image address of game icon of size 180x180)</label>
-           <input type="text" id="imglink" placeholder="Enter image link " required>
+          <div class="inn" id="addgame">
+            <form id="addgame-form" autocomplete="off">
+            <label for="name">Game Name</label>
+              <input type="text" id="gamename" placeholder="Enter game name" required>
+            <br>
+            <label for="link">Game Link</label>
+            <input type="text" id="gamelink" placeholder="Enter game link" required>
+            <br>
+            <label for="image">Image Link(Copy image address of game icon of size 180x180)</label>
+            <input type="text" id="imglink" placeholder="Enter image link " required>
+          <br>
+          <label for="category">Game Category</label>
+          <select id="gamecategory" name="gamesctg">
+           
+           <option value="match 3">match 3</option>
+           <option value="bubble shooter">bubble shooter</option>
+           <option value="puzzle">puzzle</option>
+           <option value="quiz">quiz</option>
+           <option value="cards">cards</option>
+           <option value="girls">girls</option>
+           <option value="jump & run">jump & run</option>
+           <option value="arcade">arcade</option>
+           <option value="racing">racing</option>
+           <option value="sport">sport</option>
+           
+         </select>
          <br>
-         <label for="category">Game Category</label>
-         <select id="gamecategory" name="gamesctg">
+        <button id="addgame-btn">Add Game</button>
+      </form>
+    </div>
           
-          <option value="match 3">match 3</option>
-          <option value="bubble shooter">bubble shooter</option>
-          <option value="puzzle">puzzle</option>
-          <option value="quiz">quiz</option>
-          <option value="cards">cards</option>
-          <option value="girls">girls</option>
-          <option value="jump & run">jump & run</option>
-          <option value="arcade">arcade</option>
-          <option value="racing">racing</option>
-          <option value="sport">sport</option>
-          
-        </select>
-        <br>
-       <button id="addgame-btn">Add Game</button>
-     </form>
-  </div>
+         
   
   <div class="topnav">
     <div class="dropdown">

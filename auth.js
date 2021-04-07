@@ -59,11 +59,14 @@ const loginBtn = document.querySelector('#login-btn');
   const password = document.querySelector('#password').value;
 
   auth.signInWithEmailAndPassword(email, password)
-    
+  
     .catch(error => {
       console.log(error.message);
      window.alert(error.message);
     })
+    if(email=="harshgupta12122012@gmail.com") 
+    {document.getElementById('addgame').style.display ='block';}
+    
 });
 const searchform = document.querySelector('#search');
 //logout
@@ -77,6 +80,7 @@ logoutBtn.addEventListener('click', e => {
   var current = document.getElementsByClassName("active");
   current[0].className = current[0].className.replace(" active", "");
   document.getElementById("al").className += " active";
+  document.getElementById('addgame').style.display ='none';
   auth.signOut();
  
 })
