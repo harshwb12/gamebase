@@ -1,2 +1,5 @@
-#GameBase
-This is gamebase.
+Tech stack used -
+1) HTML
+2) CSS
+3) JavaScript
+4) Firebase
